@@ -3,9 +3,7 @@
     "name": "Pawter",
     "description": ":3",
     "version": "3.1.0",
-    "permissions": [
-        "activeTab"
-    ],
+    "permissions": [],
     "content_scripts": [
         {
             "js": ["main.js"],
