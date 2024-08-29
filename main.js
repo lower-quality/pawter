@@ -48,7 +48,10 @@ function replace() {
         // https://stackoverflow.com/a/38399344/26767691
         const headerElement = document.querySelector(`header > * a[aria-label*='${originalText}' i]`)
         if (headerElement) {
-            headerElement.innerHTML = headerElement.innerHTML.replace(originalText, newText)
+            const textElement = headerElement.querySelector("div > div[dir=ltr]:not([aria-label]) > span")
+            if (textElement) {
+                textElement.innerHTML = newText
+            }
         }
     }
     
@@ -58,7 +61,10 @@ function replace() {
     ) {
         const dropdownElement = getByText("div[data-testid='Dropdown'] > div > div > a", originalText)
         if (dropdownElement) {
-            dropdownElement.innerHTML = dropdownElement.innerHTML.replace(originalText, newText)
+            const textElement = dropdownElement.querySelector("div > div[dir=ltr]:not([aria-label]) > span")
+            if (textElement) {
+                textElement.innerHTML = newText
+            }
         }
     }
 }
