@@ -70,7 +70,7 @@ function replace() {
     // "Post" button (#5)
     const postButton = document.querySelector("header > * a[aria-label='Post']")
     const postText = postButton?.querySelector("span > span")
-    postText?.innerHTML = "Pawst"
+    if (postText) { postText.innerHTML = "Pawst" }
 }
 
 let previousHTML = document.querySelector('body').innerHTML
