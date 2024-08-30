@@ -29,7 +29,6 @@ function replace() {
         "Premium": "Pawmium",
         "Verified Orgs": "Verified Paworgs",
         "Profile": "Pawfile",
-        "Post": "Pawst",
 
         "Grok": "Pawk",
     }
@@ -67,6 +66,11 @@ function replace() {
             }
         }
     }
+
+    // "Post" button (#5)
+    const postButton = document.querySelector("header > * a[aria-label='Post']")
+    const postText = postButton?.querySelector("span > span")
+    postText?.innerHTML = "Pawst"
 }
 
 let previousHTML = document.querySelector('body').innerHTML
