@@ -29,7 +29,6 @@ function replace() {
         "Premium": "Pawmium",
         "Verified Orgs": "Verified Paworgs",
         "Profile": "Pawfile",
-        "Post": "Pawst",
 
         "Grok": "Pawk",
     }
@@ -67,6 +66,19 @@ function replace() {
             }
         }
     }
+
+    // "Post" button (#5)
+    const postButton = document.querySelector("header > * a[aria-label='Post']")
+    const postText = postButton?.querySelector("span > span")
+    if (postText) { postText.innerHTML = "Pawst" }
+
+    // Premium -> Pawmium on https://twitter.com/i/premium_sign_up
+    const dialog = document.querySelector("div[role='dialog'][aria-modal=true]")
+    const dialogTexts = dialog.querySelectorAll("span")
+    Array.from(dialogTexts).forEach(dialogText => {
+        if (!dialogText) { return }
+        dialogText.innerHTML = dialogText.innerHTML.replace("Premium", "Pawmium")
+    })
 }
 
 let previousHTML = document.querySelector('body').innerHTML
